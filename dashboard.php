@@ -2,19 +2,7 @@
 <html>
 <head>
 	<title>Property Dashboard</title>
-	<style>
-		.card {
-			border: 1px solid black;
-			padding: 10px;
-			margin: 10px;
-			width: 300px;
-			display: inline-block;
-			vertical-align: top;
-		}
-		.property-tax {
-			font-style: italic;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 	<h1>Property Dashboard</h1>
@@ -22,7 +10,11 @@
 	<!-- Display all available properties -->
 	<?php
 		// Connect to the database
-		$conn = mysqli_connect("localhost", "username", "password", "database");
+		$host = "localhost";
+		$user = "ssmalley1";
+		$password = "ssmalley1";
+		$dbname = "ssmalley1";
+		$conn = mysqli_connect($host, $user, $password, $dbname);
 
 		// Retrieve all properties from the database
 		$sql = "SELECT * FROM properties";
