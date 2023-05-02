@@ -12,7 +12,6 @@ $is_logged_in = isset($_SESSION['user_id']);
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    
         <nav>
             <ul>
               <li class="active"><a href="#">About</a></li>
@@ -24,8 +23,7 @@ $is_logged_in = isset($_SESSION['user_id']);
 			<?php } ?>
             </ul>
         </nav>
-    
-    <div>
+    <div id="left">
         <div id="des">
             <h1 class="redBack">Project Description:</h1>
             <div class="musturd">
@@ -45,7 +43,42 @@ $is_logged_in = isset($_SESSION['user_id']);
                     The Login/Registration Page is how the users access the Seller Dashboard. New users are required to register for an account before accessing the dashboard. The registration process involves collecting basic info such as username and password. Users who have already registered are able to log in using said username and password.
                 </p>
             </div>
-        </div>
+              </div>
+       
+      <br>
+       <div id="creators" class="musturd">
+           <h2 class="pad">Team Members</h2>
+           <ul>
+           <li>Bee Smalley</li>
+           <li>Adrian Rodriguez-Cruz</li>
+           <li>Chanwoo Park</li>
+           </ul>
+
+           <h2 class="pad">Project Information</h2>
+           <ul>
+           <li>Leader's Name: Bee Smalley</li>
+           <li>Project Name: PropertyHub</li>
+           <li>Github Links: 
+               <ul>
+               <li><a href="https://github.com/beesmalley">Bee Smalley GitHub</a></li>
+               <li><a href="https://github.com/Saydfalls">Adrian Rodriguez-Cruz GitHub</a></li>
+               <li><a href="https://github.com/Chanu02">Chanwoo Park GitHub</a></li>
+               </ul>
+           </li>
+           </ul>
+
+           <h2 class="pad">Summary of SCRUM Methodology</h2>
+           <p>SCRUM was beneficial to us in terms of solving all the obstacles that we encountered throughout our project. By using an agile approach to project management, we were able to:</p>
+           <ul>
+           <li>Quickly identify and address issues as they arose</li>
+           <li>Collaborate effectively as a team</li>
+           <li>Continuously improve our processes and workflow</li>
+           <li>Deliver a high-quality product on time</li>
+           </ul>
+           <p>We believe that SCRUM will continue to be beneficial to us in the future, as it provides a framework for managing complex projects that allows for flexibility and adaptability to changing circumstances.</p>
+
+       </div>
+       </div>
         <br>
         <div id="faq">
             <div>
