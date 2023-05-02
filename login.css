@@ -1,5 +1,6 @@
 body{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background: #456990;
 }
 nav {
     background-color: #49DCB1;
@@ -50,9 +51,6 @@ p{
 .musturd{
     background: #EEB868;
 }
-.lapiz{
-    background: #456990;
-}
 .keppel{
     background: #49BEAA;
 }
@@ -71,10 +69,12 @@ form {
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     border-radius: 5px;
 }
+input{
+    border:3px solid lightgray;
+}
 input[type=text], input[type=password] {
     padding: 10px;
     margin: 10px -10px;
-    border: lightgray;
     border-radius: 3px;
     width: 100%;
 }
@@ -93,4 +93,41 @@ input[type=submit]:hover {
 .error {
     color: red;
     margin-bottom: 10px;
+}
+#login{
+    width:47%;
+    float:left;
+}
+#reg{
+    width:47%;
+    float:right;
+}
+
+#des .musturd{
+    padding:1px;
+    border-radius: 10px;
+}
+#faq .musturd{
+    border-radius: 5px;
+}
+
+#des{
+    float:left;
+    width:47%;
+}
+#faq{
+    float:right;
+    width:47%;
+}
+.loggedin{
+    color:white;
+    margin-top:15px;
+    margin-left:60%;
+}
+
+#adding{
+    float:left;
+}
+#props{
+    float:right;
 }
