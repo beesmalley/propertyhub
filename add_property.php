@@ -1,13 +1,10 @@
 <?php
 // Connect to the database
-$conn = mysqli_connect("localhost", "username", "password");
-
-// Create the database if it does not exist
-$sql = "CREATE DATABASE IF NOT EXISTS database";
-mysqli_query($conn, $sql);
-
-// Select the database
-mysqli_select_db($conn, "database");
+$servername = "localhost";
+$db_username = "ssmalley1";
+$db_password = "ssmalley1";
+$dbname = "ssmalley1";
+$conn = mysqli_connect($servername, $db_username, $db_password, $dbname);
 
 // Check if the properties table exists
 $sql = "SELECT 1 FROM properties LIMIT 1";
@@ -27,7 +24,8 @@ if (!$result) {
         parking TINYINT(1) NOT NULL,
         proximity VARCHAR(255) NOT NULL,
         main_roads VARCHAR(255) NOT NULL,
-        value INT(10) NOT NULL
+        value INT(10) NOT NULL,
+        img_data BLOB NOT NULL
     )";
     mysqli_query($conn, $sql);
 }
@@ -45,13 +43,17 @@ $proximity = $_POST["proximity"];
 $main_roads = $_POST["main_roads"];
 $value = $_POST["value"];
 
+// Get the image data from the uploaded file
+$img_data = addslashes(file_get_contents($_FILES['img']['tmp_name']));
+
 // Insert the new property into the database
-$sql = "INSERT INTO properties (location, age, floor_plan, square_footage, num_bedrooms, facilities, garden, parking, proximity, main_roads, value) VALUES ('$location', $age, '$floor_plan', $square_footage, $num_bedrooms, '$facilities', $garden, $parking, '$proximity', '$main_roads', $value)";
+$sql = "INSERT INTO properties (location, age, floor_plan, square_footage, num_bedrooms, facilities, garden, parking, proximity, main_roads, value, img_data)
+VALUES ('$location', '$age', '$floor_plan', '$square_footage', '$num_bedrooms', '$facilities', '$garden', '$parking', '$proximity', '$main_roads', '$value', '$img_data')";
 $result = mysqli_query($conn, $sql);
 
 // Check if the property was successfully added
 if ($result) {
-    echo "Property added successfully!";
+    header("Location: dashboard.php");
 } else {
     echo "Error adding property: " . mysqli_error($conn);
 }
