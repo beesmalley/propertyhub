@@ -26,11 +26,12 @@ $is_logged_in = isset($_SESSION['user_id']); ?>
 	<!-- Display all available properties -->
 	<?php
 		// Connect to the database
-		$host = "localhost";
-		$user = "ssmalley1";
-		$password = "ssmalley1";
-		$dbname = "ssmalley1";
-		$conn = mysqli_connect($host, $user, $password, $dbname);
+		define('DB_NAME', 'ssmalley1');
+		define('DB_USER', 'ssmalley1');
+		define('DB_PASSWORD', 'ssmalley1');
+		define('DB_HOST', 'localhost');
+
+		$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 		// Retrieve all properties from the database
 		$sql = "SELECT * FROM properties";
@@ -56,7 +57,7 @@ $is_logged_in = isset($_SESSION['user_id']); ?>
 
 			<div class="card">
 				<h2><?php echo $location; ?></h2>
-				<img src="data:image/*;charset=utf8;base64,<?php echo base64_encode($img_data); ?>" /> 
+				<?php echo "<img src='data:image/jpeg;base64," . base64_encode($row['img_data']) . "' style='max-width: 400px;'/><br>"; ?>
 				<p>Age: <?php echo $age; ?></p>
 				<p>Floor Plan: <?php echo $floor_plan; ?> (<?php echo $square_footage; ?> sq ft)</p>
 				<p>Bedrooms: <?php echo $num_bedrooms; ?></p>
@@ -80,7 +81,7 @@ $is_logged_in = isset($_SESSION['user_id']); ?>
 <!-- Form to add a new property -->
 <div id="adding">
 	<h2 class="redBack">Add New Property</h2>
-	<form action="add_property.php" method="post">
+	<form action="add_property.php" method="post" enctype="multipart/form-data">
 		<label for="location">Location:</label>
 		<input type="text" name="location" required><br>
 
