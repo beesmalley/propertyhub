@@ -110,14 +110,14 @@ input[type=submit]:hover {
 #faq .musturd{
     border-radius: 5px;
 }
-
-#des{
-    float:left;
-    width:47%;
+#creators .musturd{
+    border-radius:5px;
+    padding:1px;
 }
 #faq{
     float:right;
     width:47%;
+    height:50%;
 }
 .loggedin{
     color:white;
@@ -134,4 +134,9 @@ input[type=submit]:hover {
 img{
     width:290px;
     height:auto;
+}
+#left{
+    float:left;
+    width:47%;
+    height:fit-content;
 }
