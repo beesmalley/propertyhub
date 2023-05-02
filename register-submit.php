@@ -1,11 +1,12 @@
 <?php
 // Connect to the database
-$host = "localhost";
-$user = "ssmalley1";
-$password = "ssmalley1";
-$dbname = "ssmalley1";
-$conn = mysqli_connect($host, $user, $password, $dbname);
+// Connect to the database
+define('DB_NAME', 'ssmalley1');
+define('DB_USER', 'ssmalley1');
+define('DB_PASSWORD', 'ssmalley1');
+define('DB_HOST', 'localhost');
 
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $username = $_POST["username"];
 $password = $_POST["password"];
  // Hash the password for security

@@ -131,3 +131,7 @@ input[type=submit]:hover {
 #props{
     float:right;
 }
+img{
+    width:290px;
+    height:auto;
+}

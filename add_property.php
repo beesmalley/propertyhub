@@ -1,11 +1,12 @@
 <?php
 // Connect to the database
-$servername = "localhost";
-$db_username = "ssmalley1";
-$db_password = "ssmalley1";
-$dbname = "ssmalley1";
-$conn = mysqli_connect($servername, $db_username, $db_password, $dbname);
+// Connect to the database
+define('DB_NAME', 'ssmalley1');
+define('DB_USER', 'ssmalley1');
+define('DB_PASSWORD', 'ssmalley1');
+define('DB_HOST', 'localhost');
 
+$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 // Check if the properties table exists
 $sql = "SELECT 1 FROM properties LIMIT 1";
 $result = mysqli_query($conn, $sql);
@@ -44,7 +45,7 @@ $main_roads = $_POST["main_roads"];
 $value = $_POST["value"];
 
 // Get the image data from the uploaded file
-$img_data = addslashes(file_get_contents($_FILES['img']['tmp_name']));
+$img_data = addslashes(file_get_contents($_FILES['image']['tmp_name']));
 
 // Insert the new property into the database
 $sql = "INSERT INTO properties (location, age, floor_plan, square_footage, num_bedrooms, facilities, garden, parking, proximity, main_roads, value, img_data)
