@@ -63,3 +63,34 @@ p{
     padding-left: 10px;
     padding-right: 10px;
 }
+form {
+    background-color: white;
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+input[type=text], input[type=password] {
+    padding: 10px;
+    margin: 10px -10px;
+    border: lightgray;
+    border-radius: 3px;
+    width: 100%;
+}
+input[type=submit] {
+    background-color: #49DCB1;
+    color: white;
+    padding: 12px 20px;
+    border: lightgray;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: #49BEAA;
+}
+.error {
+    color: red;
+    margin-bottom: 10px;
+}
